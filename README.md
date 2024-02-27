@@ -234,7 +234,7 @@ Important! The following routes are only available for accounts with the `admini
 8. Click `"Update application"`.  
 ![image](https://github.com/Boffin-ux/mini-games-api/assets/65894984/f5e9b674-4e33-42f9-9031-3a3191849cda)
 
-## Testing[⬆](#testing)
+## Testing[⬆](#table-of-contents)
 
 ### Unit tests
  - Run all tests:
