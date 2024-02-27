@@ -14,6 +14,7 @@ A simple API service for mini games.
 - [Deploy to Render](#deploy-to-render)
 - [Endpoints](#endpoints)
 - [Github OAuth2](#github-oauth2)
+- [Testing](#testing)
 
 ## Create a Database[⬆](#table-of-contents)
 
@@ -25,38 +26,34 @@ A simple API service for mini games.
 3. Choose a free trial plan and click `"Create cluster"`:
 ![image](https://github.com/Boffin-ux/mini-games-api/assets/65894984/887461a3-54cc-4b93-8700-bd59d66329a6)
 
+4. Wait for the cluster to be created and go to the `"Database Access"` section in the menu on the left.
 
-5. Wait for the cluster to be created and go to the `"Database Access"` section in the menu on the left.
+5. Click `"Add New Database User"`.
 
-6. Click `"Add New Database User"`.
-
-7. Enter the username and password for the new user and click `"Add User"`:
+6. Enter the username and password for the new user and click `"Add User"`:
 ![image](https://github.com/Boffin-ux/mini-games-api/assets/65894984/f5c197d0-4e72-4fe2-81d7-5ca6419e6644)
 
+7. Go to the `"Network Access"` section in the menu on the left and Click `"Add IP Address"`.
 
-9. Go to the `"Network Access"` section in the menu on the left and Click `"Add IP Address"`.
-
-10. In the menu that appears, allow access from anywhere (for educational purposes), or configure it according to your needs:
+8. In the menu that appears, allow access from anywhere (for educational purposes), or configure it according to your needs:
 ![image](https://github.com/Boffin-ux/mini-games-api/assets/65894984/aebee0b7-60db-448c-8c1b-91da20977469)
 
-
-12. Return to the Database section and click `"Connect"` in your cluster menu:
+9. Return to the Database section and click `"Connect"` in your cluster menu:
 ![image](https://github.com/Boffin-ux/mini-games-api/assets/65894984/1df15e42-a76b-4460-af01-62a00f93671c)
 
-
-14. In the menu that appears, select `"Connect your application"` and copy your connection string:
+10. In the menu that appears, select `"Connect your application"` and copy your connection string:
 ![image](https://github.com/Boffin-ux/mini-games-api/assets/65894984/acca10f2-4d66-4d2b-b228-794ff979ddc0)
 
-15. Your line should look something like this:
+11. Your line should look something like this:
 
     ```text
     mongodb+srv://<your-username>:<password>@cluster0.<your-tag>.mongodb.net/<dbname>?retryWrites=true&w=majority
     ```
 
-16. Replace `<password>` with the password of the user you created and `<dbname>` with the name you want.
-
+12. Replace `<password>` with the password of the user you created and `<dbname>` with the name you want.
 
 ## Environment variables[⬆](#table-of-contents)
+
 Before running the application, set the environment variables in the .env or server settings (see `.env.example`):
 
 1. Required variables:
@@ -164,7 +161,6 @@ $ npm run start:prod
 5. Specify build and start commands:
 ![image](https://github.com/Boffin-ux/mini-games-api/assets/65894984/ad859461-9e48-408d-8268-2d204ef494f4)
 
-
     - Build Command:
 
       ```bash
@@ -237,3 +233,39 @@ Important! The following routes are only available for accounts with the `admini
 
 8. Click `"Update application"`.  
 ![image](https://github.com/Boffin-ux/mini-games-api/assets/65894984/f5e9b674-4e33-42f9-9031-3a3191849cda)
+
+## Testing[⬆](#testing)
+
+### Unit tests
+ - Run all tests:
+
+  ```bash
+  npm run test
+  ```
+
+ - Run all tests with coverage report:
+
+  ```bash
+  npm run test:cov
+  ```
+
+ - Run only one of all test suites:
+
+  ```bash
+  npm run test -- <path to suite>
+  ```
+
+### End-to-End tests
+**Attention!** After running End-to-End tests, the database will be cleared
+
+ - Run all tests:
+
+  ```bash
+  npm run test:e2e
+  ```
+
+ - Run all tests with coverage report:
+   
+  ```
+  npm run test:e2e:cov
+  ```
